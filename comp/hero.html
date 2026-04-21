@@ -1,0 +1,65 @@
+<div class="hero_container">
+    <div id="hero" class="hero_body">
+            <h1 class="text1 title">Welcome to Onyx Audio Tech</h1>
+            <p class="text2">A creative hangout for music producers, game devs, graphic designers, and anyone making cool stuff.</p>
+            <div class="cta">
+                <a href="https://discord.gg/hXeFZ4ag" class="btn btn-lg btn-primary">Join Our Discord</a>
+            </div>
+    </div>
+    <style>
+        .hero_container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10vh auto;
+        }
+        .hero_body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &>.cta{
+                margin: 2rem 0;
+            }
+            &>.title{
+                font-size: clamp(5rem, 2vw, 4rem) !important;
+                text-align: center;
+                border-bottom: 1px solid black;
+            }
+        }
+        @media screen and (max-width: 1000) {
+            .hero_container{
+                margin-top: 0 !important;
+            }
+            
+        }
+    </style>
+    <script>
+        (function(){
+            function init(data){
+                const hero = document.getElementById(`${data.id}`)
+                hero.querySelector(".text1").textContent = data.text1
+                hero.querySelector(".text2").textContent = data.text2
+                hero.querySelector(".cta").querySelector("a").href = data.cta_url
+                hero.querySelector(".cta").querySelector("a").innerText = data.cta
+                hero.style.setProperty('--font_size_title', `${parseInt(document.body.style.getPropertyValue('--font_size_h1'))*2}px`)
+                console.log(hero.style.getPropertyValue('--font_size_title'))
+                hero.style.backgroundImage = `url(${data.bg_image_url})`
+                hero.style.backgroundSize = "cover"
+                hero.style.backgroundBlendMode = "lighten"
+                hero.style.backgroundColor = "rgba(255, 255, 255, 0.7)"
+                hero.style.backgroundPosition = "center"
+                hero.style.width = "100%"
+                hero.style.height = "100%" 
+                hero.style.margin = "0"
+            }
+
+            window.componentRegistry.register("hero", init)
+        })()
+    </script>
+</div>
