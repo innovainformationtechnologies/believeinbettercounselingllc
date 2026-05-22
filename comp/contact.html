@@ -1,21 +1,62 @@
 <div>
     <div id="contact" class="container">
-        <div class="contact">
-            <div class="contact-inner">
-                <h1 class="text1">Contact</h1>
-                <p class="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla eget elit dictum varius. Maecenas risus mi, porta mattis nulla vitae, ultricies lorem.</p>
-                <div class="cta">
-                    <a href="mailto:info@example.com" class="btn btn-lg btn-primary">Get in touch</a>
-                </div>
-            </div>
+        <div class="contact_body">
+            <h2 class="text1">Subscribe to our newsletter</h2>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <input type="submit" value=">">
+            </form>
         </div>
     </div>
+    <style>
+        .contact_body{
+            margin: 10vh auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            border: 1px solid var(--text);
+            width: fit-content;
+            margin: auto;
+            &>input{
+                border: none;
+                background-color: transparent;
+                padding: 1rem;
+                &::placeholder{
+                    color: var(--text);
+                }
+            }
+            &>input[type="submit"]{
+                border: none;
+                background-color: transparent;
+                color: var(--text);
+            }
+        }
+    </style>
     <script>
         (function(){
+
+            function submit(e, endpoint){
+                e.preventDefault()
+                let email = e.target[0].value
+                fetch("/api/subscribe", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email
+                    })
+                })
+            }
             function init(data){
                 const contact = document.querySelector("#contact")
-                contact.querySelector(".text1").textContent = data.text1
-                contact.querySelector(".text2").textContent = data.text2
+                contact.querySelector(".text1").textContent = data.text
+                contact.querySelector("form").addEventListener("submit", (e) => {
+                    submit(e, data.endpoint)
+                })
             }
 
             window.componentRegistry.register("contact", init)

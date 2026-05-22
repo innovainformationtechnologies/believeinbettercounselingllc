@@ -12,17 +12,33 @@ html {
 	width: 100%;
 	background-color: var(--background) !important;
 	color: var(--text) !important;
+    overflow-x: hidden !important;
 }
 body {
     max-width: 100% !important;
     background-color: var(--background) !important;
 	color: var(--text) !important;
-	font-family: mono;
+	font-family: var(--font_family) !important;
     font-size: var(--font_size_base) !important;
+    letter-spacing: 0.06rem;
+    line-height: calc(1 + 0.8 / var(--font_body_scale));
+    font-style: var(--font_body_style);
+    font-weight: var(--font_body_weight);
+    word-break: break-word;
+}
+.container{
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 h1, h2, h3, h4, h5, h6{
     font-family: var(--font_family_heading) !important;
-    color: var(--text) !important;
+    color: var(--text);
+    font-weight: var(--font_heading_weight);
+    letter-spacing: calc(var(--font_heading_scale) * .06rem);
+    line-height: calc(1 + .3 / max(1, var(--font_heading_scale)));
+    word-break: break-word;
 }
 h1{
     font-size: var(--font_size_h1) !important;
@@ -66,34 +82,46 @@ nav, #nav, .navbar-default, .navbar-static-top{
     text-shadow: none;
 }
 .btn-secondary{
-    color: var(--text) !important;
+    color: var(--primary_color) !important;
+    background: var(--accent_color);
+    font-size: var(--font_size_h3);
+    border: none;
+    &:hover{
+        background: var(--primary_color);
+        color: var(--accent_color) !important;
+    }
 }
 
 .btn-primary{
     background: var(--primary_color);
-    color: var(--background);
+    color: var(--text);
     font-size: var(--font_size_h3);
     border: none;
-    border-radius: 0.5rem !important;
-}
-
-#btn-discord, &>*{
-    color: var(--theme-primary);
-}    
-
-#hero, #catalog-container, #contact-container, #about-container{
-    margin: 10vh auto;
-    &>.row{
-        margin: auto;
+    &:hover{
+        background: var(--accent_color);
     }
 }
-#about-container>row{
-    display: flex;
-    flex-direction: row;
+
+.btn{
+    border-radius: 0 !important;
+    padding: 1rem 3rem !important;
+    margin: 0.5rem 0 !important;
+    transition: all 0.5s ease-in-out;
+    box-shadow: none !important;
+}
+.btn:hover{
+    transform: scale(1.05)
 }
 
-.jumbotron{
-    background-color: var(--theme-transparent) !important;
+#subfooter{
+    display: flex;
+    color: var(--text) !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    margin: auto !important;
 }
 
 @media screen and (max-width: 1000px){
