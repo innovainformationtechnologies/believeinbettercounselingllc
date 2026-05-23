@@ -99,7 +99,7 @@ function adjustFontSizeOnResize(item) {
   document.body.style.setProperty('--font_size_title', `${item.font_size_base*4}px`);
   if (on_desktop) {
     document.body.style.setProperty('--font_size_small', `${item.font_size_base}px`); 
-    document.body.style.setProperty('--font_size_base', `${item.font_size_base*2}px`); 
+    document.body.style.setProperty('--font_size_base', `${item.font_size_base*1.1}px`); 
     document.body.style.setProperty('--font_size_h1', `${item.font_size_base*4}px`);
     document.body.style.setProperty('--font_size_h2', `${item.font_size_base*3}px`);
     document.body.style.setProperty('--font_size_h3', `${Math.floor(item.font_size_base*2.5)}px`);

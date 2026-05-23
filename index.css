@@ -95,7 +95,7 @@ nav, #nav, .navbar-default, .navbar-static-top{
 .btn-primary{
     background: var(--primary_color);
     color: var(--text);
-    font-size: var(--font_size_h3);
+    font-size: var(--font_size_h4);
     border: none;
     &:hover{
         background: var(--accent_color);

@@ -1,5 +1,5 @@
 component,background,text,primary_color,accent_color,font_family_heading,font_family_body,font_size_base,title,font_heading_scale,font_heading_weight,font_body_scale,font_body_weight,font_body_style
-theme,#FFF,#2C2C2C,#FFF,#000,Assistant,Assistant,8,Believe in Better Counseling LLC,1.1,400,1,400,normal
+theme,#FFF,#2C2C2C,#FFF,#000,Assistant,Assistant,16,Believe in Better Counseling LLC,1.1,400,1,400,normal
 ,,,,,,,,,,,,,
 component,id,logo,banner_message_1,banner_message_2,,,,,,,,,
 header,header_01,https://believeinbettercounselingllc.com/cdn/shop/files/Believe-Logo_copy_c23bdc31-ae13-46a9-8b84-b2e7417facb1.png?v=1710631018&width=240,Hope Is Where The Heart Is,Free 30 Min. Consultation,,,,,,,,,
